@@ -1,5 +1,6 @@
 import { Route } from "wouter";
 import "./App.css";
+import "antd/dist/antd.css";
 import Login from "./Components/LoginComponent/Login";
 import Loader from "./Components/LoadingComponent/Loader";
 import Home from "./Pages/Home";

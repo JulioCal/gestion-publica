@@ -1,0 +1,41 @@
+.dropeable-list {
+    flex: 1 0;
+    padding: 1rem;
+    margin: 0.5rem;
+    background: #d8e1e6;
+    display: flex;
+    width: 23vw;
+    height: 76.1vh;
+    border-radius: 5px;
+    flex-direction: column;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.dropeable-list::-webkit-scrollbar {
+    display: none;
+}
+
+.col {
+    padding: 0% !important;
+}
+
+.border-container {
+    padding: .4rem;
+    border: solid thin #bbb;
+    background-color: #d8e1e6;
+}
+
+.inner-border-container {
+    box-shadow: inset 0px 0px 5px 0px #777;
+    overflow-x: scroll;
+    flex-wrap: nowrap !important;
+    padding: 0px;
+    width:fit-content;
+    border-radius: 5px;
+    background-color: #f2f6f8;
+    border: solid thin #bbb;
+}

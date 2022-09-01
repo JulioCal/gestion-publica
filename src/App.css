@@ -2,9 +2,60 @@
   text-align: center;
 }
 
-.Sider {
-  height: 100%;
-  background-color: black;
-  color: white;
-  font-weight: bolder;
+.sider {
+  background-color: #e0e0e0 !important;
+  display: flex;
+  flex-flow: column;
+  height: 82.5vh;
+}
+
+.header-silver {
+  display: flex;
+  justify-content: space-between;
+  background-color: #d0d0d0 !important;
+}
+
+li {
+  list-style: none;
+}
+
+.proyect-tab {
+  cursor: pointer;
+  transition: .5s;
+  padding: 1rem;
+  background-image: linear-gradient(0deg, #a0a0a0  35%, white);
+}
+
+.proyect-tab:active {
+  background-image: linear-gradient(180deg, #a0a0a0 55%, white 120%);
+}
+
+.darkText {
+  color: #121212 !important;
+}
+.lightText {
+  color: #f2f2f2 !important;
+}
+.navTab {
+  background-color: transparent !important ;
+  border-bottom: none !important;
+}
+.navButton {
+  cursor: pointer;
+  border-radius: 5px;
+  border: solid thin #a0a0a0;
+  padding: .3rem;
+  height: 1.8rem;
+  float: right;
+  transition-duration: .25s;
+  background-image: linear-gradient(0deg, transparent 85%, rgba(255, 255, 255, 0.7));
+}
+
+.navButton:hover {
+  background-image: linear-gradient(0deg, transparent 80%, rgba(255, 255, 255, 0.7));
+}
+
+.navButton:active {
+  transform: scale(0.95);
+  background-image: linear-gradient(180deg, rgba(100, 100, 100, 0.05) 75%, rgba(255, 255, 255, 0.7));
 }
