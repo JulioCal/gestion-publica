@@ -49,6 +49,30 @@ export default function ContentData() {
     }
   }
 
+  function sms(text, limit) {
+    let messages = [];
+    let max = Math.ceil(text.length / limit);
+    for (let i = 0; i <= max; i++) {
+      let indicator = "(" + (i + 1) + "/" + (max + 1) + ")";
+      let breakPoint = limit - indicator.length;
+      if (i === 0) {
+        messages.push(text.slice(0, breakPoint) + indicator);
+      } else {
+        messages.push(
+          text.slice(breakPoint * i, breakPoint * (i + 1)) + indicator
+        );
+      }
+    }
+    console.log(text.split(" "));
+    console.log(messages);
+  }
+
+  sms("hello, world!", 10);
+  sms(
+    "lorem ipsum dolor sit amet, dolomet taket sumiren asuarpa. this is a very very long text omg so happy, what to do now",
+    10
+  );
+
   return (
     <>
       <Row className="m-0 border-container">

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+import React, { Suspense } from "react";
 import { useLocation, Route, Router, Switch } from "wouter";
 import "./App.css";
 import "antd/dist/antd.css";
@@ -5,11 +7,13 @@ import Login from "./Components/LoginComponent/Login";
 import Loader from "./Components/LoadingComponent/Loader";
 import corpozulia from "./images/corpozulia.png";
 import defaultLogo from "./images/gray-icon.png";
-import ContentData from "./Components/ContentComponent/Content";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { LogoutOutlined } from "@ant-design/icons";
 import { Layout, Space, Avatar } from "antd";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+const ContentData = React.lazy(() =>
+  import("./Components/ContentComponent/Content")
+);
 
 function App() {
   const { Header, Footer, Sider, Content } = Layout;
@@ -19,7 +23,6 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/" component={Login} />
-        <Route path="/loader" component={Loader} />
         <Router base="/home">
           <Layout>
             <Header className="header-silver">
@@ -46,7 +49,9 @@ function App() {
                 </Space>
               </Sider>
               <Content>
-                <ContentData />
+                <Suspense fallback={<Loader></Loader>}>
+                  <Route path="/content" component={ContentData} />
+                </Suspense>
               </Content>
             </Layout>
             <Footer
